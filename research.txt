@@ -1,0 +1,1 @@
+https://www.codeproject.com/Articles/232972/Creating-an-application-like-Google-Desktop-in-WPF
