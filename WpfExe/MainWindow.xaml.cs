@@ -43,5 +43,22 @@ namespace WpfExe
             }
 
         }
+
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            var prc = Process.Start("notepad.exe");
+            prc.WaitForInputIdle();
+            bool ok = MoveWindow(prc.MainWindowHandle, 500, 500, 300, 200, false);
+            if (!ok) throw new System.ComponentModel.Win32Exception();
+        }
+
+
+    
+        
+
+        
     }
 }
